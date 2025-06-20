@@ -56,7 +56,7 @@
         <figure onclick="ponerPie(this)"><img src="/img/gato feliz.jpg" width="33" height="75"
         alt="Número 1">
             <figcaption></figcaption></figure>
-        <figure onclick="ponerPie(this)"><img src="" width="50" height="75"
+        <figure onclick="ponerPie(this)"><img src="/img/maxwell-cat.gif" width="50" height="75"
         alt="Número 2">
             <figcaption></figcaption></figure>
         <figure onclick="ponerPie(this)"><img src="/img/gato sorprendido.jpg" width="49" height="75"
@@ -66,6 +66,11 @@
         <div id="fuentes"></div>
         <div class="carrusel" data-img="0" onclick="cambiaImg()">
             <img src="../imgs/uno.png" alt="Diapositivas" id="diapo">
+        </div>
+        <div id="gato-container">
+            <div class="flechas">⬇️⬇️⬇️</div>
+            <button id="masGatosBtn" class="boton especial-gato">Más gatos</button>
+            <div class="flechas">⬆️⬆️⬆️</div>
         </div>
     <!-- inicio de las funciones javascript pedidas en los ejercicios -->
     <script>
@@ -101,3 +106,129 @@ function borrarDiv(){
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+#gato-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#masGatosBtn {
+    font-size: 24px;
+    font-weight: bold;
+    background: orange;
+    border: 2px solid black;
+    padding: 12px 24px;
+    box-shadow: 0px 0px 10px yellow;
+    animation: parpadeo 1s infinite alternate;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.flechas {
+    text-align: center;
+    font-size: 40px;
+    animation: mover 1s infinite;
+}
+
+@keyframes parpadeo {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.1); opacity: 0.5; }
+}
+
+@keyframes mover {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+</style>
+<script>
+    document.getElementById("masGatosBtn").addEventListener("click", function() {
+    const fondo = document.createElement("div");
+        fondo.style.position = "fixed";
+        fondo.style.top = 0;
+        fondo.style.left = 0;
+        fondo.style.width = "100vw";
+        fondo.style.height = "100vh";
+        fondo.style.backgroundColor = "black";
+        fondo.style.display = "flex";
+        fondo.style.flexDirection = "column";
+        fondo.style.justifyContent = "center";
+        fondo.style.alignItems = "center";
+        fondo.style.zIndex = 9999;
+    const img = document.createElement("img");
+        img.src = "/img/Gato well.jfif";
+        img.alt = "Gato poderoso";
+        img.style.width = "95vw";
+        img.style.height = "95vh";
+        img.style.borderRadius = "30px";
+        img.style.boxShadow = "0 0 40px #2b0000";
+        fondo.appendChild(img);
+    const audio = document.createElement("audio");
+        audio.src = "/img/Miau.mp3";
+        audio.autoplay = true;
+        audio.loop = true;
+        fondo.appendChild(audio);
+    document.body.appendChild(fondo);
+});
+</script>
